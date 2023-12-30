@@ -20,7 +20,8 @@ const config: Config = {
         accent: '#81a1d4',
         secondary: '#dfe7f4',
         success: '#3a970a',
-        'success-light': '#e6ffbe'
+        'success-light': '#e6ffbe',
+        'ticket-header': '#dfe7f4'
       },
       colors: {
         accent: '#81a1d4',

@@ -2,11 +2,16 @@
 
 import {prisma} from "@/libs/prisma";
 import {list} from "postcss";
+import {cookies} from "next/headers";
 
 export const getTickets = async(validity: number = 0) => {
+    const cookieStore = cookies()
+    const userId = cookieStore.get('userId')?.value
+
     const tickets = await prisma.ticket.findMany({
         where: {
-            validity
+            validity,
+            userId
         },
         select: {
             id: true,
