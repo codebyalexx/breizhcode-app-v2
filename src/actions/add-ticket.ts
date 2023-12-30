@@ -38,8 +38,8 @@ export const addTicket_allez_cu = async() => {
     const userId = cookieStore.get('userId')?.value
     return await addTicket({
         userId,
-        from: 'Paimpol',
-        to: 'Saint-Brieuc'
+        from: 'Paimpol, Gare',
+        to: 'Saint-Brieuc, Gare'
     })
 }
 
@@ -48,7 +48,7 @@ export const addTicket_retour_cu = async() => {
     const userId = cookieStore.get('userId')?.value
     return await addTicket({
         userId,
-        from: 'Saint-Brieuc',
-        to: 'Paimpol'
+        from: 'Saint-Brieuc, Gare',
+        to: 'Paimpol, Gare'
     })
 }

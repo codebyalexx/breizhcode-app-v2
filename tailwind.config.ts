@@ -21,10 +21,12 @@ const config: Config = {
         secondary: '#dfe7f4',
         success: '#3a970a',
         'success-light': '#e6ffbe',
-        'ticket-header': '#dfe7f4'
+        'ticket-header': '#dfe7f4',
+        light: '#a8ccec'
       },
       colors: {
         accent: '#81a1d4',
+        light: '#a8ccec',
         disabled: '#9e9e9e',
         success: '#3a970a',
         'success-light': '#e6ffbe'

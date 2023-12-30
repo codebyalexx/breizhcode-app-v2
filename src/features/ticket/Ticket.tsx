@@ -1,4 +1,5 @@
 import {CalendarX, Flag, QrCode, UserRoundCheck} from "lucide-react";
+import Link from "next/link";
 
 export const Ticket = ({ ticket }: {ticket:any}) => {
     const date = new Date(ticket.expires)
@@ -37,7 +38,7 @@ export const Ticket = ({ ticket }: {ticket:any}) => {
                     </span>
                 </aside>
             </div>
-            <button className={'bg-accent w-full text-white rounded p-2.5'}>Valider une correspondance</button>
+            <Link href={'/tickets/display'} className={'block bg-accent w-full text-white text-center rounded p-2.5'}>Valider une correspondance</Link>
         </div>
     </div>);
 }

@@ -20,7 +20,8 @@ export const getTickets = async(validity: number = 0) => {
             from: true,
             to: true,
             validity: true,
-            expires: true
+            expires: true,
+            createdAt: true,
         },
         take: 1
     });
