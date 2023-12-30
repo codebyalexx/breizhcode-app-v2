@@ -27,7 +27,7 @@ export const Ticket = ({ ticket }: {ticket:any}) => {
                     <span className={'text-sm flex items-center mb-3'}>
                         <Flag size={18} className={'text-accent mr-2'} /> {ticket.to}
                     </span>
-                    <p>Valide jusqu'au :</p>
+                    <p>Valide jusqu&apos;au :</p>
                     <span className={'flex font-bold items-center'}>
                         <CalendarX size={20} className={'text-red-500 mr-1.5'} /> {date.getDate()}/{date.getMonth()+1}/{date.getFullYear()} à {date.getHours()}:{date.getMinutes()}
                     </span>

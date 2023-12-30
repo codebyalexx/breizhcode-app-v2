@@ -16,13 +16,15 @@ export default function Home() {
             <div className={'flex gap-2 flex-wrap mb-2'}>
                 <button className={'flex items-center p-1 px-3 bg-indigo-500 rounded-full text-white font-medium text-sm'} onClick={async () => {
                     const user1 = await getUser1();
-                    cookies.set('userId', user1.id);
-                    cookies.set('name', user1.name);
+                    cookies.set('userId', user1 ? user1.id : '');
+                    // @ts-ignore
+                    cookies.set('name', user1 ? user1.name : '');
                 }}><User size={20} /> Select User 1 (Alexandre)</button>
                 <button className={'flex items-center p-1 px-3 bg-orange-500 rounded-full text-white font-medium text-sm'} onClick={async () => {
                     const user2 = await getUser2();
-                    cookies.set('userId', user2.id);
-                    cookies.set('name', user2.name);
+                    cookies.set('userId', user2 ? user2.id : '');
+                    // @ts-ignore
+                    cookies.set('name', user2 ? user2.name : '');
                 }}><User size={20} /> Select User 2 (Alann)</button>
                 <button className={'flex items-center p-1 px-3 bg-red-500 rounded-full text-white font-medium text-sm'} onClick={async () => {
                     await resetTickets()
