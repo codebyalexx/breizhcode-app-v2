@@ -1,4 +1,4 @@
-import {Calendar, CalendarCheck, CalendarX, ChevronLeft, Flag, UserRoundCheck} from "lucide-react";
+import {CalendarCheck, CalendarX, ChevronLeft, Flag, UserRoundCheck} from "lucide-react";
 import {getActiveTickets} from "@/src/queries/tickets.query";
 import Link from "next/link";
 import {Spinner} from "@/app/tickets/display/Spinner";

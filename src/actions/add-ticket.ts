@@ -32,23 +32,3 @@ export const addTicket = async({
 
     return ticket;
 }
-
-export const addTicket_allez_cu = async() => {
-    const cookieStore  = cookies()
-    const userId = cookieStore.get('userId')?.value
-    return await addTicket({
-        userId,
-        from: 'Paimpol, Gare',
-        to: 'Saint-Brieuc, Gare'
-    })
-}
-
-export const addTicket_retour_cu = async() => {
-    const cookieStore  = cookies()
-    const userId = cookieStore.get('userId')?.value
-    return await addTicket({
-        userId,
-        from: 'Saint-Brieuc, Gare',
-        to: 'Paimpol, Gare'
-    })
-}
