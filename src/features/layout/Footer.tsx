@@ -15,10 +15,13 @@ const FooterNavigation = () => {
     const route = usePathname()
     const pageName = route.split('/')[1] || 'home'
 
+    console.log(pageName === 'tickets');
+    
+
     return (<nav className={'w-full'}>
         <ul className={'flex flex-row justify-between'}>
             <li>
-                <Link href={'/cart'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'cart' ? 'text-accent' : '')}>
+                <Link href={'/cart'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'cart' ? '!text-accent' : '')}>
                     <ShoppingBasket size={20} />
                     <span className={'text-sm'}>
                         Panier
@@ -26,7 +29,7 @@ const FooterNavigation = () => {
                 </Link>
             </li>
             <li>
-                <Link href={'/tickets/inventory'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'tickets' ? 'text-accent' : '')}>
+                <Link href={'/tickets/inventory'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'tickets' ? '!text-accent' : '')}>
                     <Ticket size={20} />
                     <span className={'text-sm'}>
                         Mes titres
@@ -34,7 +37,7 @@ const FooterNavigation = () => {
                 </Link>
             </li>
             <li>
-                <Link href={'/shop'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'shop' ? 'text-accent' : '')}>
+                <Link href={'/shop'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'shop' ? '!text-accent' : '')}>
                     <Store size={20} />
                     <span className={'text-sm'}>
                         Boutique
@@ -42,7 +45,7 @@ const FooterNavigation = () => {
                 </Link>
             </li>
             <li>
-                <Link href={'/more'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'plus' ? 'text-accent' : '')}>
+                <Link href={'/more'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'plus' ? '!text-accent' : '')}>
                     <Plus size={20} />
                     <span className={'text-sm'}>
                         Plus
