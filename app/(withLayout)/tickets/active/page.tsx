@@ -1,15 +1,22 @@
 import {TicketsLayout} from "@/app/(withLayout)/tickets/TicketsLayout";
+import { Ticket } from "@/src/features/ticket/Ticket";
 import {getActiveTickets} from "@/src/queries/tickets.query";
-import {Ticket} from "@/src/features/ticket/Ticket";
+import { TicketIcon } from "lucide-react";
 
 export default async function ActiveTickets() {
     const activeTickets = await getActiveTickets();
 
-    return (<TicketsLayout>
-        {activeTickets?.length > 0 ? <ActiveTicketsList tickets={activeTickets} /> : <div>
-            Pas de tickets
-        </div>}
-    </TicketsLayout>);
+    return (activeTickets?.length > 0 ? <TicketsLayout>
+        <ActiveTicketsList tickets={activeTickets} />
+    </TicketsLayout> : <TicketsLayout className="h-full">
+        <div className="h-full w-full flex items-center justify-center">
+            <div className="w-full flex flex-col items-center justify-center px-12">
+                <TicketIcon size={132} className="text-gray-400" />
+                <p className="font-bold text-base mb-1">Vous n&apos;avez aucun titre en cours</p>
+                <p className="text-sm font-normal text-center">Rendez-vous dans titres restants pour en valider un nouveau</p>
+            </div>
+        </div>
+    </TicketsLayout>)
 }
 
 interface ActiveTicketsProps {
