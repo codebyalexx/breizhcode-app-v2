@@ -1,12 +1,11 @@
 "use client"
 
-import { cities } from "@/libs/cities"
-import { cn } from "@/libs/utils"
 import { addTicket } from "@/src/actions/add-ticket"
 import { resetTickets } from "@/src/actions/reset-tickets.action"
 import { getUser1 } from "@/src/queries/user.query"
 import { useCookies } from "next-client-cookies"
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { CityList } from "./CityList"
 
 export default function ShopPage() {
     const cookies = useCookies()
@@ -26,8 +25,8 @@ export default function ShopPage() {
 
         const user1 = await getUser1()
 
-        cookies.set('userId', user1 ? user1?.id : '');
-        cookies.set('name', user1 ? user1?.name : '');
+        cookies.set('userId', user1?.id || 'NoID');
+        cookies.set('name', user1?.name || 'Unnamed');
 
         if (user1) alert('Utilisateur 1 selectionné !')
 
@@ -77,32 +76,4 @@ export default function ShopPage() {
             <img src="/shopbanner.png" alt="Breizh go banner" />
         </div>
     </div>
-}
-
-export const CityList = ({ opened=false, valueCallback }: {opened: boolean | undefined, valueCallback: any}) => {
-    const [open, setOpen] = useState(opened)
-
-    useEffect(() => {
-        setOpen(opened)
-    }, [opened])
-
-    const stations = []
-    for (const [cityName, subStations] of Object.entries(cities)) {
-        for (const subStation of subStations) {
-            let searchValidated = true;
-
-            if (searchValidated) stations.push(<li className="w-full flex-1 mb-3.5 text-sm font-light" key={`${cityName}, ${subStation}`} onClick={() => {
-                setOpen(false)
-                valueCallback(`${cityName}, ${subStation}`)
-            }}>
-                {cityName}, {subStation}
-            </li>)
-        }
-    }
-
-    return (<div className={cn("py-3 bg-white z-20 absolute -left-1.5 -right-1.5 mt-1 top-full p-2", open ? "": " hidden")}>
-        <ul className="w-full flex flex-col items-start justify-start flex-wrap">
-            {stations}
-        </ul>
-    </div>)
 }
