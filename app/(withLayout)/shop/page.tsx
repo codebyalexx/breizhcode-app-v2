@@ -73,7 +73,9 @@ export default function ShopPage() {
                 </div>
             </div>
         </div>
-        <div className="mb-14 bg-black h-fit w-full">bottom</div>
+        <div className="mb-12 h-fit w-full">
+            <img src="/shopbanner.png" alt="Breizh go banner" />
+        </div>
     </div>
 }
 
