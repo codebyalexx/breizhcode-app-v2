@@ -45,7 +45,7 @@ const FooterNavigation = () => {
                 </Link>
             </li>
             <li>
-                <Link href={'/more'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'plus' ? '!text-accent' : '')}>
+                <Link href={'/more'} className={clsx('flex flex-col gap-2 items-center justify-center text-disabled font-medium', pageName === 'more' ? '!text-accent' : '')}>
                     <Plus size={20} />
                     <span className={'text-sm'}>
                         Plus

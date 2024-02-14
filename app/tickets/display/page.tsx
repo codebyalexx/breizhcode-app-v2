@@ -1,4 +1,3 @@
-import { Spinner } from "@/app/tickets/display/Spinner";
 import { padWithLeadingZeros } from "@/libs/utils";
 import { getActiveTickets } from "@/src/queries/tickets.query";
 import {
@@ -9,6 +8,7 @@ import {
   UserRoundCheck,
 } from "lucide-react";
 import Link from "next/link";
+import { Spinner } from "./Spinner";
 
 export default async function DisplayTicket() {
   const tickets = await getActiveTickets();
